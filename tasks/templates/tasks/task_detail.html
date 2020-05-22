@@ -1,0 +1,31 @@
+{% extends 'tasks/base.html' %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title" id="taskDetailHeader">
+                {{task.title}}
+            </div>
+            <div class="card-subtitle">
+                {{task.create_date}}
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row p-2" id="taskDescription" >
+                <p2>{{task.description}}</p2>
+            </div>
+            <div class="row justify-content-start">
+                <a class=" btn btn-secondary mr-1" href="{% url 'update_task' task.id %}"> Update </a>
+                <a class=" btn btn-danger mr-1" href="{% url 'delete_task' task.id %}"> Delete</a>
+                <a class=" btn btn-primary mr-1" href="{% url 'index' %}">Go Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+<h1></h1>
+{% endblock content %}
+    

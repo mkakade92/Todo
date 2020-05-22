@@ -1,0 +1,17 @@
+{% extends 'tasks/base.html' %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <form method = "POST">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input class="btn btn-primary" type="submit" name="" value ="Update Task" id="">
+        </form>
+
+    </div>
+</div>
+    
+{% endblock content %}

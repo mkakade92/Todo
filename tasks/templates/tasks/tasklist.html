@@ -1,0 +1,57 @@
+{% extends 'tasks/base.html' %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+<!--Create Task Modal-->
+<div class="modal fade" id="createTaskModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createTaskModalHeader">Create Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="createTaskModalBody">
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p }}
+                <input class="btn btn-secondary" type="submit" value="Create task">
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <div class="card createTaskCard">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-10">
+                    <h3 id="card-header">ToDo</h3>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTaskModal">
+                        Create Task
+                      </button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+
+            {% for task in tasks %}
+                <div class="row row-content">
+                    <div class="col-xs-12 col-md-8"><a href="{% url 'task_detail' task.id %}">{{task.title}}</a></div>
+                    <div class="col d-flex justify-content-end">
+                        <a class="btn btn-secondary mr-2" href="{% url 'update_task' task.id %}"><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-danger" href="{% url 'delete_task' task.id %}"><i class="fas fa-trash-alt"></i></a>     
+                    </div>
+                </div>   
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
+    
+

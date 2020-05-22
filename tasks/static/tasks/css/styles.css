@@ -1,0 +1,44 @@
+body {
+    background-color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.jumbotron{
+    margin-top: 2%;
+}
+
+.card{
+margin-top: 2%;
+}
+
+.card-header{
+    border-bottom: 1px solid gray;
+}
+#card-header{
+    font-family: 'Roboto', sans-serif;
+    font-size: x-large;
+}
+
+.createTaskCard{
+    margin-top: 2%;
+
+}
+
+.row-content{
+    padding: 2%;
+    border-bottom: 1px ridge gray;
+
+}
+
+#taskDescription{
+    padding: 2%;
+    border-bottom: 1px ridge gray;
+    margin-bottom: 2%;
+}
+
+#taskDetailHeader{
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+}
